@@ -1,0 +1,13 @@
+{
+  "project": "Proyecto nuevo",
+  "chapterNumber": 1,
+  "title": "La puerta sin ceniza",
+  "pov": "Protagonista",
+  "objective": "Recuperar un documento antes de que lo destruyan.",
+  "conflict": "El lugar está vigilado por alguien que reconoce su mentira.",
+  "turn": "El documento prueba que su familia inició la guerra.",
+  "cliffhanger": "Una voz tras la puerta pronuncia su nombre verdadero.",
+  "targetWords": 2200,
+  "temperature": 0.85,
+  "maxTokens": 4000
+}

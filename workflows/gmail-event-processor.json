@@ -1,0 +1,46 @@
+{
+  "id": "gmail-event-processor",
+  "name": "Procesador de correo (IMAP IDLE → n8n)",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "gmail-arrival",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "b0110643-0e9e-4879-bb08-aa032fbf34e3",
+      "name": "Llegó correo por IMAP IDLE",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [280, 300],
+      "webhookId": "gmail-arrival"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/process-email",
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.body) }}",
+        "options": { "timeout": 120000 }
+      },
+      "id": "f4c1ea45-31e6-4c8d-9878-5739b22fef0d",
+      "name": "Procesar correo entrante",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [560, 300]
+    }
+  ],
+  "connections": {
+    "Llegó correo por IMAP IDLE": {
+      "main": [[{ "node": "Procesar correo entrante", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1", "saveExecutionProgress": false, "executionTimeout": 180 },
+  "pinData": {},
+  "meta": { "templateCredsSetupCompleted": true },
+  "tags": []
+}

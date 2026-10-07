@@ -1,0 +1,13 @@
+{
+  "project": "La marea de los ausentes",
+  "chapterNumber": 1,
+  "title": "La dalca varada",
+  "pov": "Kallfü",
+  "objective": "Entregar al consejo la carga hallada junto a un mensajero muerto antes de que la marea la destruya.",
+  "conflict": "Püllü lo acusa de haber robado la carga y Ragiñ quiere ocultar el sello de su padre.",
+  "turn": "Kallfü descubre que la carga contiene obsidiana destinada a una guerra local y que el cordel está marcado con el sello de su padre.",
+  "cliffhanger": "Ragiñ ordena que Kallfü guarde silencio; desde la playa, Amu ve llegar una segunda embarcación sin antorchas.",
+  "targetWords": 2000,
+  "temperature": 0.82,
+  "maxTokens": 4000
+}

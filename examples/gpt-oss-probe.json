@@ -1,0 +1,10 @@
+{
+  "model": "gpt-oss-120b",
+  "temperature": 0.7,
+  "max_tokens": 700,
+  "reasoning_effort": "low",
+  "messages": [
+    {"role": "system", "content": "Eres editor literario chileno. Responde sólo con prosa terminada, sin razonamiento ni análisis."},
+    {"role": "user", "content": "Escribe 120 palabras de prosa histórica sobria en español: una canoa huilliche encuentra un muerto en una playa del sur prehispánico. Sin magia, sin clichés ni explicaciones."}
+  ]
+}

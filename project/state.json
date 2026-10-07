@@ -1,0 +1,14 @@
+{
+  "project": "La marea de los ausentes",
+  "nextChapter": 1,
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "La dalca varada",
+      "pov": "Kallfü",
+      "file": "chapters/001-la-dalca-varada-v1.md",
+      "status": "rechazado-por-control-editorial",
+      "note": "Muestra técnica real: 547 palabras, menor al objetivo y con fallas de prosa. No cuenta como capítulo final."
+    }
+  ]
+}

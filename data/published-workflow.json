@@ -1,0 +1,68 @@
+[
+  {
+    "id": "novel-writer-free-api",
+    "name": "Novel Writer — API gratuita controlada",
+    "active": false,
+    "isArchived": false,
+    "nodes": [
+      {
+        "parameters": {
+          "httpMethod": "POST",
+          "path": "novel-draft",
+          "responseMode": "responseNode",
+          "options": {}
+        },
+        "id": "c09ddbe0-df59-4054-bd5b-4b7d0e110001",
+        "name": "Solicitud de capítulo",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2,
+        "position": [260, 300],
+        "webhookId": "novel-writer-free-api"
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8788/draft",
+          "sendHeaders": true,
+          "headerParameters": {
+            "parameters": [{ "name": "Content-Type", "value": "application/json" }]
+          },
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={{ JSON.stringify($json.body) }}",
+          "options": {}
+        },
+        "id": "c09ddbe0-df59-4054-bd5b-4b7d0e110002",
+        "name": "Generar y archivar borrador",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [520, 300]
+      },
+      {
+        "parameters": {
+          "respondWith": "json",
+          "responseBody": "={{ JSON.stringify($json) }}",
+          "options": {}
+        },
+        "id": "c09ddbe0-df59-4054-bd5b-4b7d0e110003",
+        "name": "Responder resultado",
+        "type": "n8n-nodes-base.respondToWebhook",
+        "typeVersion": 1.1,
+        "position": [770, 300]
+      }
+    ],
+    "connections": {
+      "Solicitud de capítulo": {
+        "main": [[{ "node": "Generar y archivar borrador", "type": "main", "index": 0 }]]
+      },
+      "Generar y archivar borrador": {
+        "main": [[{ "node": "Responder resultado", "type": "main", "index": 0 }]]
+      }
+    },
+    "settings": { "executionOrder": "v1" },
+    "staticData": null,
+    "meta": { "templateCredsSetupCompleted": true },
+    "pinData": {},
+    "tags": []
+  }
+]
